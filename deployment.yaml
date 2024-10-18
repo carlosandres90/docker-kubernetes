@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: docker01-andres-pillajo-deployment
+  labels:
+    app: docker01-andres-pillajo
+spec:
+  replicas: 3  # Número de réplicas (puedes cambiarlo según lo necesites)
+  selector:
+    matchLabels:
+      app: docker01-andres-pillajo
+  template:
+    metadata:
+      labels:
+        app: docker01-andres-pillajo
+    spec:
+      containers:
+      - name: docker01-andres-pillajo-container
+        image: carloandrepb/docker01-andres-pillajo:latest  # Imagen Docker que deseas desplegar
+        ports:
+        - containerPort: 5000  # Puerto expuesto en el contenedor
+
