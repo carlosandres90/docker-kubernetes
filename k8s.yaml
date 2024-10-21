@@ -1,3 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: carlos
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -20,4 +25,3 @@ spec:
         image: carloandrepb/docker01-andres-pillajo:latest  # Imagen Docker que deseas desplegar
         ports:
         - containerPort: 5000  # Puerto expuesto en el contenedor
-
