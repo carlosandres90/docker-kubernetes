@@ -1,0 +1,15 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: docker01-andres-pillajo-gateway
+  namespace: carlos
+spec:
+  selector:
+    istio: ingressgateway  # Selecciona el gateway de Istio por defecto
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "*"

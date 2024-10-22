@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: docker01-andres-pillajo-svc
+  namespace: carlos
+  labels:
+    app: docker01-andres-pillajo
+spec:
+  selector:
+    app: docker01-andres-pillajo
+  ports:
+  - protocol: TCP
+    port: 5000
+    targetPort: 5000
+  type: ClusterIP  # Tipo de servicio

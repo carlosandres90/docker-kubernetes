@@ -21,3 +21,4 @@ spec:
         ports:
         - containerPort: 5000  # Puerto expuesto en el contenedor
 
+

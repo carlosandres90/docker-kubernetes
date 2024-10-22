@@ -1,0 +1,13 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: allow-http-get
+  namespace: carlos
+spec:
+  selector:
+    matchLabels:
+      app: docker01-andres-pillajo  # Aplica la política a los pods con esta etiqueta
+  rules:
+  - to:
+    - operation:
+        methods: ["GET"]  # Solo permite solicitudes GET
